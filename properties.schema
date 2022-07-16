@@ -1,0 +1,225 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required": false,
+  "globals": {
+    "navigationBarLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Seleccione el idioma del curso",
+      "title": "Etiqueta de la barra de navegación",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "languageSelector": {
+      "type": "string",
+      "required": true,
+      "default": "Selector de idioma",
+      "title": "Selector de idioma",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "_languagePicker": {
+              "type": "object",
+              "required": false,
+              "legend": "Selector de idioma",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si la extensión del selector de idioma está habilitada o deshabilitada."
+                },
+                "title": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Título de la ventana del navegador",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Texto que se muestra en la barra de título del navegador cuando se muestra el selector de idioma."
+                },
+                "displayTitle": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Título del selector de idioma",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Texto de encabezado para el Selector de idioma"
+                },
+                "body": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Texto del contenido del selector de idioma",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Texto introductorio o explicativo para el Selector de idioma"
+                },
+                "_showOnCourseLoad": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "Mostrar en la carga del curso",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controla si el Selector de idioma debe mostrarse en la carga del curso o no."
+                },
+                "_languagePickerIconClass": {
+                  "type": "string",
+                  "required": false,
+                  "default": "icon-language-2",
+                  "title": "Incluir clases para personalizar el icono del selector de idioma en la barra de navegación.",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Sus opciones predeterminadas aquí son: icon-globe, icon-language-1, icon-language-2"
+                },
+                "_restoreStateOnLanguageChange": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Restaurar el estado del curso en el cambio de idioma",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Determina si el selector de idioma intentará restaurar el 'estado' del curso cuando el usuario cambie de idioma. Se recomienda que solo habilite esta configuración si todos los idiomas del curso tienen exactamente la misma estructura; si no lo hacen, se producirá alguna pérdida de datos de seguimiento. Si esta configuración está deshabilitada, los datos de seguimiento se borrarán cuando el usuario cambie de idioma; se debe usar el 'Mensaje de confirmación' para advertir al usuario de esto."
+                },
+                "_classes": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Incluir clases",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": ""
+                },
+                "_languages": {
+                  "type": "array",
+                  "required": true,
+                  "title": "Idiomas",
+                  "items": {
+                    "type": "object",
+                    "required": true,
+                    "title": "Idioma",
+                    "properties": {
+                      "_language": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Código de idioma",
+                        "inputType": "Text",
+                        "validators": ["required"],
+                        "help": "Este texto debe coincidir con el nombre de la carpeta específica del idioma ubicada en la raíz del curso, p. en, fr, es"
+                      },
+                      "_direction": {
+                        "type": "string",
+                        "required": true,
+                        "default": "ltr",
+                        "title": "Dirección del texto",
+                        "inputType": {"type": "Select",
+                         "options": [
+                          {"val":"ltr", "label":"De izquierda a derecha"},
+                          {"val":"rtl", "label":"De derecha a izquierda"}
+                          ]},
+                        "validators": ["required"],
+                        "help": ""
+                      },
+                      "_isDisabled": {
+                        "type": "boolean",
+                        "required": true,
+                        "default": false,
+                        "title": "Está deshabilitado",
+                        "inputType": "Checkbox",
+                        "validators": [],
+                        "help": "Le permite deshabilitar la selección de este idioma. Esto puede ser útil en situaciones en las que aún no se ha completado la localización a un idioma en particular.."
+                      },
+                      "displayName": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Nombre del idioma",
+                        "inputType": "Text",
+                        "validators": ["required"],
+                        "help": "Un nombre fácil de usar para el idioma, p. Inglés, Francés, Español"
+                      },
+                      "warningTitle": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Confirmar idioma",
+                        "inputType": "Text",
+                        "validators": ["required"],
+                        "help": "Este texto aparece como encabezado del cuadro de diálogo que confirma la intención del alumno de cambiar de idioma."
+                      },
+                      "warningMessage": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Confirmar mensaje",
+                        "inputType": "Text",
+                        "validators": ["required"],
+                        "help": "Este texto aparece como el contenido del cuadro de diálogo que confirma la intención del alumno de cambiar de idioma. Nota: el mensaje de advertencia debe indicar que cualquier progreso se perderá cuando se cambie el idioma."
+                      },
+                      "_buttons": {
+                        "type": "object",
+                        "required": true,
+                        "title": "Botones de solicitud",
+                        "properties": {
+                          "yes": {
+                            "type": "string",
+                            "required": true,
+                            "default": "Si",
+                            "title": "Confirmar",
+                            "inputType": "Text",
+                            "validators": ["required"],
+                            "help": "Texto del botón para confirmar el cambio de idioma."
+                          },
+                          "no": {
+                            "type": "string",
+                            "required": true,
+                            "default": "No",
+                            "title": "Cancelar",
+                            "inputType": "Text",
+                            "validators": ["required"],
+                            "help": "Texto del botón para cancelar el cambio de idioma."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "contentobject": {
+          "type": "object"
+        },
+        "article": {
+          "type": "object"
+        },
+        "block": {
+          "type": "object"
+        },
+        "component": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
