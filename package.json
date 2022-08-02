@@ -4,13 +4,13 @@
     "type": "git",
     "url": "git://github.com/adaptlearning/adapt-contrib-languagePicker.git"
   },
-  "version": "10.0.4",
+  "version": "10.0.5",
   "framework": ">=5.19.1",
   "homepage": "https://github.com/wtechsas/adapt-contrib-languagePicker",
   "bugs": "https://github.com/wtechsas/adapt-contrib-languagePicker/issues",
   "extension": "languagePicker",
   "displayName": "Selector de idioma",
-  "description": "Una extensión que permite al alumno seleccionar el idioma del curso en un curso multilingüe",
+  "description": "Una extensión que permite al alumno seleccionar el idioma del Recurso en un Recurso multilingüe",
   "main": "/js/adapt-languagePicker.js",
   "keywords": [
     "adapt-plugin",

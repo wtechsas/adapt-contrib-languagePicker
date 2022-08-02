@@ -7,7 +7,7 @@
     "navigationBarLabel": {
       "type": "string",
       "required": true,
-      "default": "Seleccione el idioma del curso",
+      "default": "Seleccione el idioma del Recurso",
       "title": "Etiqueta de la barra de navegación",
       "inputType": "Text",
       "validators": [],
@@ -76,10 +76,10 @@
                   "type": "boolean",
                   "required": true,
                   "default": true,
-                  "title": "Mostrar en la carga del curso",
+                  "title": "Mostrar en la carga del Recurso",
                   "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Controla si el Selector de idioma debe mostrarse en la carga del curso o no."
+                  "help": "Controla si el Selector de idioma debe mostrarse en la carga del Recurso o no."
                 },
                 "_languagePickerIconClass": {
                   "type": "string",
@@ -94,10 +94,10 @@
                   "type": "boolean",
                   "required": true,
                   "default": false,
-                  "title": "Restaurar el estado del curso en el cambio de idioma",
+                  "title": "Restaurar el estado del Recurso en el cambio de idioma",
                   "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Determina si el selector de idioma intentará restaurar el 'estado' del curso cuando el usuario cambie de idioma. Se recomienda que solo habilite esta configuración si todos los idiomas del curso tienen exactamente la misma estructura; si no lo hacen, se producirá alguna pérdida de datos de seguimiento. Si esta configuración está deshabilitada, los datos de seguimiento se borrarán cuando el usuario cambie de idioma; se debe usar el 'Mensaje de confirmación' para advertir al usuario de esto."
+                  "help": "Determina si el selector de idioma intentará restaurar el 'estado' del Recurso cuando el usuario cambie de idioma. Se recomienda que solo habilite esta configuración si todos los idiomas del Recurso tienen exactamente la misma estructura; si no lo hacen, se producirá alguna pérdida de datos de seguimiento. Si esta configuración está deshabilitada, los datos de seguimiento se borrarán cuando el usuario cambie de idioma; se debe usar el 'Mensaje de confirmación' para advertir al usuario de esto."
                 },
                 "_classes": {
                   "type": "string",
@@ -124,7 +124,7 @@
                         "title": "Código de idioma",
                         "inputType": "Text",
                         "validators": ["required"],
-                        "help": "Este texto debe coincidir con el nombre de la carpeta específica del idioma ubicada en la raíz del curso, p. en, fr, es"
+                        "help": "Este texto debe coincidir con el nombre de la carpeta específica del idioma ubicada en la raíz del Recurso, p. en, fr, es"
                       },
                       "_direction": {
                         "type": "string",
